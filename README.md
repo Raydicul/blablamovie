@@ -19,7 +19,7 @@ $ php bin/console doctrine:migration:migrate
         "birthdayDate": "15/07/1994"
     }
     ```
-- Retourne utilisateur et ses votes:
+- Retourne un utilisateur et ses votes:
     GET /user/{id}
 - Retourne tous les utilisateurs aillant des votes:
     GET /users-with-vote
