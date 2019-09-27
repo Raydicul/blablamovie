@@ -10,8 +10,7 @@ $ php bin/console doctrine:migration:migrate
 ```
 
 ## Utilisation
-- Créer un utilisateur:
-    `POST /user`
+- `POST /user` : Créer un utilisateur
     ```json
     {
         "username": "test",
@@ -19,20 +18,19 @@ $ php bin/console doctrine:migration:migrate
         "birthdayDate": "15/07/1994"
     }
     ```
-- Retourne un utilisateur et ses votes:
-    `GET /user/{id}`
-- Retourne tous les utilisateurs aillant des votes:
-    `GET /users-with-vote`
-- Voter pour un film:
-    `POST /vote/{user_id}`
+- `GET /user/{id}` : Retourne un utilisateur et ses votes
+    
+- `GET /users-with-vote` : Retourne tous les utilisateurs aillant des votes
+    
+- `POST /vote/{user_id}` : Voter pour un film
     ```json
         {
             "imdbID": "tt0105236"
         }
     ```
-- Retourne un vote:
-    `GET /vote/{id}`
-- Supprimer un vote:
-    `DELETE /vote/{id}`
-- Retourne le film avec le plus de votes dans un interval de temps donnée, ou si startDate et endDate ne sont pas précisés, retourne le film avec le plus de vote:
-    `GET /vote-top?startDate="23/09/2019"&endDate="30/09/2019"`
+    
+- `GET /vote/{id}` : Retourne un vote
+    
+- `DELETE /vote/{id}` : Supprimer un vote
+    
+- `GET /vote-top?startDate="23/09/2019"&endDate="30/09/2019"` : Retourne le film avec le plus de votes dans un interval de temps donnée, ou si startDate et endDate ne sont pas précisés, retourne le film avec le plus de vote
