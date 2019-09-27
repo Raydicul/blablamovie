@@ -33,4 +33,4 @@ $ php bin/console doctrine:migration:migrate
     
 - `DELETE /vote/{id}` : Supprimer un vote
     
-- `GET /vote-top?startDate="23/09/2019"&endDate="30/09/2019"` : Retourne le film avec le plus de votes dans un interval de temps donnée, ou si startDate et endDate ne sont pas précisés, retourne le film avec le plus de vote
+- `GET /vote-top?startDate="23/09/2019"&endDate="30/09/2019"` : Retourne le film avec le plus de votes dans un interval de temps donné, ou si `startDate` et `endDate` ne sont pas précisés, retourne le film avec le plus de vote
