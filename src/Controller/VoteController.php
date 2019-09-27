@@ -15,7 +15,7 @@ class VoteController extends AbstractFOSRestController
     /**
      * Affiche le meilleur film
      *
-     * @Rest\Get("/top-vote", name="vote_show_top")
+     * @Rest\Get("/vote-top", name="vote_show_top")
      * @Rest\View(StatusCode = 200)
      * @Rest\QueryParam(
      *     name="startDate"
