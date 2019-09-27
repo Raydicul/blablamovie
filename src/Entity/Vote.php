@@ -50,7 +50,7 @@ class Vote
      *
      * @Assert\NotBlank
      * @Assert\Regex(
-     *     pattern="/^tt.*\d{7}/",
+     *     pattern="/^tt*\d{7}/",
      *     message="L'imdbID doit respecter le format : tt0105236"
      * )
      */
