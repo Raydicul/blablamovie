@@ -11,7 +11,7 @@ $ php bin/console doctrine:migration:migrate
 
 ## Utilisation
 - Créer un utilisateur:
-    POST /user 
+    `POST /user`
     ```json
     {
         "username": "test",
@@ -20,19 +20,19 @@ $ php bin/console doctrine:migration:migrate
     }
     ```
 - Retourne un utilisateur et ses votes:
-    GET /user/{id}
+    `GET /user/{id}`
 - Retourne tous les utilisateurs aillant des votes:
-    GET /users-with-vote
+    `GET /users-with-vote`
 - Voter pour un film:
-    POST /vote/{user_id}
+    `POST /vote/{user_id}`
     ```json
         {
             "imdbID": "tt0105236"
         }
     ```
 - Retourne un vote:
-    GET /vote/{id}
+    `GET /vote/{id}`
 - Supprimer un vote:
-    DELETE /vote/{id}
+    `DELETE /vote/{id}`
 - Retourne le film avec le plus de votes dans un interval de temps donnée, ou si startDate et endDate ne sont pas précisés, retourne le film avec le plus de vote:
-    GET /vote-top?startDate="23/09/2019"&endDate="30/09/2019"
+    `GET /vote-top?startDate="23/09/2019"&endDate="30/09/2019"`
