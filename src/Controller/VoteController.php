@@ -6,25 +6,12 @@ use App\Entity\User;
 use App\Entity\Vote;
 use FOS\RestBundle\Controller\AbstractFOSRestController;
 use FOS\RestBundle\Controller\Annotations as Rest;
-use Sensio\Bundle\FrameworkExtraBundle\Configuration\ParamConverter;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Generator\UrlGeneratorInterface;
-use Symfony\Component\Validator\ConstraintViolationListInterface;
 use Symfony\Component\HttpKernel\Exception\HttpException;
 
 class VoteController extends AbstractFOSRestController
 {
-    /**
-     * Affiche un vote
-     *
-     * @Rest\Get("/vote/{id}", name="vote_show")
-     * @Rest\View(StatusCode = 200)
-     */
-    public function showAction(Vote $vote)
-    {
-        return $this->view($vote, Response::HTTP_OK);
-    }
-
     /**
      * Affiche le meilleur film
      *
@@ -49,16 +36,27 @@ class VoteController extends AbstractFOSRestController
     }
 
     /**
+     * Affiche un vote
+     *
+     * @Rest\Get("/vote/{id}", name="vote_show")
+     * @Rest\View(StatusCode = 200)
+     */
+    public function showAction(Vote $vote)
+    {
+        return $this->view($vote, Response::HTTP_OK);
+    }
+
+    /**
      * Ajoute un vote à un utilisateur
      *
      * @Rest\Post("/vote/{id}", name="vote_add")
+     * @Rest\View(StatusCode = 201)
      * @Rest\RequestParam(
      *     name="imdbID",
      *     requirements="^tt*\d{7}",
      *     nullable=false,
      *     description="L'imdbID doit respecter le format : tt0105236"
      * )
-     * @Rest\View(StatusCode = 201)
      */
     public function addVoteAction(User $user, $imdbID)
     {

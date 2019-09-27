@@ -9,8 +9,8 @@ class UserRepository extends EntityRepository
     /**
      * @return mixed
      */
-    public function getUsersWithVote() {
-
+    public function getUsersWithVote()
+    {
         $qb = $this->createQueryBuilder('u')
             ->innerJoin('u.votes', 'v')
             ->getQuery();

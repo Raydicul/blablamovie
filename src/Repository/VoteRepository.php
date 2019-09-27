@@ -11,8 +11,8 @@ class VoteRepository extends EntityRepository
      *
      * @return mixed
      */
-    public function getTop() {
-
+    public function getTop()
+    {
         $qb = $this->createQueryBuilder('v')
             ->select('v.imdbID, count(v.imdbID) as counter')
             ->groupby('v.imdbID')
@@ -31,8 +31,8 @@ class VoteRepository extends EntityRepository
      * @return mixed
      * @throws \Exception
      */
-    public function getTopFromDateRange($startDate, $endDate) {
-
+    public function getTopFromDateRange($startDate, $endDate)
+    {
         try {
             $stDate = new \DateTime($startDate);
             $edDate = new \DateTime($endDate);

@@ -1,4 +1,6 @@
 {
+    "name": "ray/blablamovie",
+    "description": "Blablamovie",
     "type": "project",
     "license": "proprietary",
     "require": {
